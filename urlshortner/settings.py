@@ -25,8 +25,8 @@ SECRET_KEY = '%)xp3*#2acgeb)%)9c6*_4vn(1-9f3^=o=91^@1(g+mkbte+8&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['xurls.herokuapp.com']
-
+# ALLOWED_HOSTS = ['xurls.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shortner'
+    'rest_framework',
+    'shortner',
+    'xurlapi',
 ]
 
 MIDDLEWARE = [
