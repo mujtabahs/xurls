@@ -15,10 +15,10 @@ class UrlViewSet(viewsets.ModelViewSet):
     serializer_class = UrlSerializer
 
 
-
+@csrf_exempt
 def index(request):
     return render(request, 'index.html')
-
+@csrf_exempt
 def create(request):
     if request.method == 'POST':
         link = request.POST['link'] 
@@ -28,7 +28,7 @@ def create(request):
         new_url = Url(link=link,uuid=uid)
         new_url.save()
         return HttpResponse(uid)
-
+@csrf_exempt
 def go(request, pk):
     url_details = Url.objects.get(uuid=pk)
     return redirect('https://'+url_details.link)
